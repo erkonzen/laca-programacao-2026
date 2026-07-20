@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Programação | LACA/SCB 2026</title>
+
+  <meta name="description" content="Programação completa do 5º Congresso LACA/SCB 2026, organizado por dias, com palestras, mesas redondas, sessões científicas, pôsteres e visitas técnicas." />
+
+  <style>
+    :root {
+      --azul-escuro: #12385c;
+      --verde-escuro: #2c5334;
+      --verde-claro: #86bb58;
+      --turquesa: #319dad;
+      --dourado: #caa019;
+      --marrom: #7b4712;
+      --lima: #b7ff63;
+      --branco: #ffffff;
+      --cinza-fundo: #f4f7f4;
+      --cinza-texto: #334155;
+      --cinza-suave: #e5e7eb;
+      --sombra: 0 12px 30px rgba(15, 23, 42, 0.12);
+      --raio: 18px;
+      --max-width: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--cinza-fundo);
+      color: var(--cinza-texto);
+      line-height: 1.55;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .site-header {
+      background:
+        radial-gradient(circle at top left, rgba(183, 255, 99, 0.22), transparent 34%),
+        linear-gradient(135deg, #102f4e 0%, #12385c 48%, #2c5334 100%);
+      color: var(--branco);
+      padding: 34px 20px 42px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .site-header::after {
+      content: "";
+      position: absolute;
+      inset: auto -80px -120px auto;
+      width: 360px;
+      height: 360px;
+      background: rgba(49, 157, 173, 0.22);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .header-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-laca {
+      width: min(320px, 78vw);
+      height: auto;
+      display: block;
+    }
+
+    .header-content {
+      min-width: 0;
+    }
+
+    .eyebrow {
+      margin: 0 0 8px;
+      color: var(--lima);
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 4rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+
+    .subtitle {
+      margin: 16px 0 0;
+      max-width: 780px;
+      font-size: clamp(1rem, 1.6vw, 1.2rem);
+      color: rgba(255, 255, 255, 0.88);
+    }
+
+    .header-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .translate-btn,
+    .source-btn {
+      border: 1px solid rgba(255, 255, 255, 0.38);
+      color: var(--branco);
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(8px);
+      border-radius: 999px;
+      padding: 10px 15px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .translate-btn:hover,
+    .source-btn:hover {
+      transform: translateY(-1px);
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    #google_translate_element {
+      position: absolute;
+      left: -9999px;
+      top: -9999px;
+      height: 0;
+      overflow: hidden;
+    }
+
+    .tabs-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
+      border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+    }
+
+    .tabs {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 10px 20px;
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      scrollbar-width: thin;
+    }
+
+    .tab-btn {
+      border: 0;
+      border-radius: 999px;
+      padding: 12px 18px;
+      min-width: max-content;
+      cursor: pointer;
+      background: #e8eef2;
+      color: #1f2937;
+      font-weight: 800;
+      transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    }
+
+    .tab-btn:hover {
+      transform: translateY(-1px);
+      background: #dbe6ee;
+    }
+
+    .tab-btn.active {
+      background: var(--azul-escuro);
+      color: var(--branco);
+    }
+
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 34px 20px 56px;
+    }
+
+    .intro-card {
+      background: var(--branco);
+      border-radius: var(--raio);
+      box-shadow: var(--sombra);
+      padding: 24px;
+      margin-bottom: 26px;
+      border-left: 8px solid var(--lima);
+    }
+
+    .intro-card p {
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    .tab-panel {
+      display: none;
+    }
+
+    .tab-panel.active {
+      display: block;
+      animation: fadeIn 0.28s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .day-heading {
+      border-radius: var(--raio);
+      padding: 26px;
+      color: var(--branco);
+      margin-bottom: 18px;
+      box-shadow: var(--sombra);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .day-heading::after {
+      content: "";
+      position: absolute;
+      right: -55px;
+      bottom: -90px;
+      width: 230px;
+      height: 230px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .day-heading h2 {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      font-size: clamp(1.7rem, 3vw, 2.6rem);
+      letter-spacing: -0.03em;
+    }
+
+    .day-heading p {
+      position: relative;
+      z-index: 1;
+      margin: 6px 0 0;
+      color: rgba(255, 255, 255, 0.88);
+      font-weight: 700;
+    }
+
+    .dia3-bg {
+      background: linear-gradient(135deg, var(--verde-escuro), #476f38);
+    }
+
+    .dia4-bg {
+      background: linear-gradient(135deg, var(--azul-escuro), var(--turquesa));
+    }
+
+    .dia5-bg {
+      background: linear-gradient(135deg, var(--marrom), var(--dourado));
+    }
+
+    .dia6-bg {
+      background: linear-gradient(135deg, var(--verde-escuro), var(--verde-claro));
+    }
+
+    .dia7-bg {
+      background: linear-gradient(135deg, var(--azul-escuro), #174a78);
+    }
+
+    .schedule-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .event-card {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      background: var(--branco);
+      border-radius: var(--raio);
+      box-shadow: 0 8px 22px rgba(15, 23, 42, 0.08);
+      overflow: hidden;
+      border: 1px solid rgba(15, 23, 42, 0.06);
+    }
+
+    .event-time {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 14px;
+      font-size: 1.12rem;
+      font-weight: 900;
+      color: #18324a;
+      background: #edf3ed;
+      border-right: 6px solid var(--azul-escuro);
+      text-align: center;
+    }
+
+    .dia3 .event-time {
+      border-right-color: var(--verde-escuro);
+    }
+
+    .dia4 .event-time {
+      border-right-color: var(--turquesa);
+    }
+
+    .dia5 .event-time {
+      border-right-color: var(--dourado);
+    }
+
+    .dia6 .event-time {
+      border-right-color: var(--verde-claro);
+    }
+
+    .dia7 .event-time {
+      border-right-color: var(--azul-escuro);
+    }
+
+    .event-info {
+      padding: 20px 22px;
+    }
+
+    .event-type {
+      margin: 0 0 5px;
+      color: var(--azul-escuro);
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      font-weight: 900;
+      letter-spacing: 0.07em;
+    }
+
+    .event-title {
+      margin: 0;
+      color: #172033;
+      font-size: clamp(1.05rem, 1.8vw, 1.28rem);
+      line-height: 1.35;
+      font-weight: 900;
+    }
+
+    .event-speaker,
+    .event-note {
+      margin: 8px 0 0;
+      color: #475569;
+      font-size: 0.98rem;
+    }
+
+    .event-speaker strong,
+    .event-note strong {
+      color: #1f2937;
+    }
+
+    .scientific-session {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+    }
+
+    .scientific-session .event-time {
+      background: #f1f5f9;
+    }
+
+    .note-box {
+      background: #fff8d7;
+      border: 1px solid #f3d46b;
+      color: #624300;
+      border-radius: var(--raio);
+      padding: 18px 20px;
+      margin-top: 18px;
+      font-size: 0.96rem;
+    }
+
+    .note-box p {
+      margin: 0;
+    }
+
+    .site-footer {
+      background: #102f4e;
+      color: rgba(255, 255, 255, 0.82);
+      padding: 28px 20px;
+      text-align: center;
+    }
+
+    .site-footer p {
+      margin: 0;
+    }
+
+    @media (max-width: 780px) {
+      .header-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .header-actions {
+        justify-content: center;
+      }
+
+      .event-card {
+        grid-template-columns: 1fr;
+      }
+
+      .event-time {
+        justify-content: flex-start;
+        border-right: 0;
+        border-bottom: 5px solid var(--azul-escuro);
+      }
+
+      .dia3 .event-time {
+        border-bottom-color: var(--verde-escuro);
+      }
+
+      .dia4 .event-time {
+        border-bottom-color: var(--turquesa);
+      }
+
+      .dia5 .event-time {
+        border-bottom-color: var(--dourado);
+      }
+
+      .dia6 .event-time {
+        border-bottom-color: var(--verde-claro);
+      }
+
+      .dia7 .event-time {
+        border-bottom-color: var(--azul-escuro);
+      }
+    }
+
+    @media (max-width: 520px) {
+      .site-header {
+        padding: 26px 16px 34px;
+      }
+
+      main {
+        padding: 24px 14px 46px;
+      }
+
+      .tabs {
+        padding: 9px 12px;
+      }
+
+      .tab-btn {
+        padding: 10px 14px;
+        font-size: 0.88rem;
+      }
+
+      .intro-card,
+      .day-heading,
+      .event-info {
+        padding: 18px;
+      }
+
+      .event-time {
+        padding: 14px 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="google_translate_element"></div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo-area">
+        <img src="logo-laca-2026.png" alt="Logo oficial LACA 2026" class="logo-laca" />
+      </div>
+
+      <div class="header-content">
+        <p class="eyebrow">5º Congresso LACA/SCB 2026</p>
+        <h1>Programação completa</h1>
+        <p class="subtitle">
+          Programação do evento organizada por dia, incluindo palestras, mesas redondas,
+          sessões científicas, apresentações orais, apresentações criativas, pôsteres e visitas técnicas.
+        </p>
+
+        <div class="header-actions" aria-label="Opções de tradução e fonte">
+          <button class="translate-btn" type="button" onclick="translatePage('es')">🇲🇽 Español</button>
+          <button class="translate-btn" type="button" onclick="translatePage('en')">🇺🇸 English</button>
+          <a class="source-btn" href="https://conbio.org/mini-sites/laca-2026/program/" target="_blank" rel="noopener">
+            Site oficial
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="tabs-wrap" aria-label="Navegação por dias da programação">
+    <div class="tabs">
+      <button class="tab-btn active" type="button" onclick="openTab(event, 'dia3')">Dia 3 · 03/11</button>
+      <button class="tab-btn" type="button" onclick="openTab(event, 'dia4')">Dia 4 · 04/11</button>
+      <button class="tab-btn" type="button" onclick="openTab(event, 'dia5')">Dia 5 · 05/11</button>
+      <button class="tab-btn" type="button" onclick="openTab(event, 'dia6')">Dia 6 · 06/11</button>
+      <button class="tab-btn" type="button" onclick="openTab(event, 'dia7')">Dia 7 · 07/11</button>
+    </div>
+  </nav>
+
+  <main>
+    <section class="intro-card">
+      <p>
+        Esta página reúne a programação do LACA/SCB 2026 em abas por dia do congresso.
+        Os horários das sessões científicas ainda estão a definir, conforme indicado na programação.
+      </p>
+    </section>
+
+    <!-- DIA 3 -->
+    <section id="dia3" class="tab-panel active dia3" aria-labelledby="heading-dia3">
+      <div class="day-heading dia3-bg">
+        <h2 id="heading-dia3">Dia 3 · Novembro 3</h2>
+        <p>Minicursos, abertura e palestra magna</p>
+      </div>
+
+      <div class="schedule-list">
+        <article class="event-card">
+          <div class="event-time">09h</div>
+          <div class="event-info">
+            <p class="event-type">Atividade</p>
+            <h3 class="event-title">Minicursos</h3>
+          </div>
+        </article>
+
+        <article class="event-card">
+          <div class="event-time">14h</div>
+          <div class="event-info">
+            <p class="event-type">Atividade</p>
+            <h3 class="event-title">Minicursos</h3>
+          </div>
+        </article>
+
+        <article class="event-card">
+          <div class="event-time">18h30</div>
+          <div class="event-info">
+            <p class="event-type">Cerimônia</p>
+            <h3 class="event-title">Abertura</h3>
+          </div>
+        </article>
+
+        <article class="event-card">
+          <div class="event-time">19h</div>
+          <div class="event-info">
+            <p class="event-type">Palestra magna</p>
+            <h3 class="event-title">From the origin of life to threats to its conservation</h3>
+            <p class="event-speaker">
+              <strong>Dra. Maria Eugenia Farías</strong> · PUNABIO Argentina
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- DIA 4 -->
+    <section id="dia4" class="tab-panel dia4" aria-labelledby="heading-dia4">
+      <div class="day-heading dia4-bg">
+        <h2 id="heading-dia4">Dia 4 · Novembro 4</h2>
+        <p>Palestra geral, mesas redondas e sessões científicas</p>
+      </div>
+
+      <div class="schedule-list">
+        <article class="event-card">
+          <div class="event-time">9h</div>
+          <div class="event-info">
+            <p class="event-type">Palestra geral</p>
+            <h3 class="event-title">
+              Climatic change, agricultural expansion, and their influence on Amazonian microbial communities
+            </h3>
+            <p class="event-speaker">
+              <strong>Dr. Siu Mui Tsai</strong> · USP Piracicaba
+            </p>
+          </div>
+        </article>
+
+        <article class="event-card">
+          <div class="event-time">10h15</div>
+          <div class="event-info">
+            <p class="event-type">Mesa redonda</p>
+            <h3 class="event-title">
+              Microbes matter: conserving the Unseen Biodiversity in a Changing Climate
+            </h3>
+            <p class="event-speaker">
+              <strong>Moderador: Dr. Ng Haig They</strong> · UFRGS
+            </p>
+          </div>
+        </article>
+
+        <article class="event-card">
+          <div class="event-time">10h15</div>
+          <div class="event-info">
+            <p class="event-type">Mesa redonda</p>
+            <h3 class="event-title">Meliponicultura e conservação de abelhas nativas</h3>
+            <p class="event-speaker">
+              <strong>Moderadora: Dra. Karen Luisa Haag</strong> · UFRGS
+            </p>
+          </div>
+        </article>
+
+        <article class="event-card">
+          <div class="event-time">14h</div>
+          <div class="event-info">
+            <p class="event-type">Mesa redonda</p>
+            <h3 class="event-title">
+              Pesca sustentável, monitoramento pesqueiro e suas relações com a conservação de peixes e ecossistemas costeiros e marinhos
+            </h3>
+            <p class="event-speaker">
+              <strong>Moderador: Dr. Fabio Lameiro</strong> · UFRGS
+            </p>
+          </div>
+        </article>
+
+        <article class="event-card">
+          <div class="event-time">14h</div>
+          <div class="event-info">
+            <p class="event-type">Mesa redonda</p>
+            <h3 class="event-title">
+              Zoonotic diseases and threat to conservation - a global concern
+            </h3>
+            <p class="event-speaker">
+              <strong>Moderador: Dr. Derek Amorim</strong> · UFRGS
+            </p>
+          </div>
+        </article>
+
+        <article class="event-card scientific-session">
+          <div class="event-time">A definir</div>
+          <div class="event-info">
+            <p class="event-type">Sessão científica</p>
+            <h3 class="event-title">Sessão de Apresentações Orais</h3>
+            <p class="event-note">
+              Horário a definir. As apresentações orais devem acontecer nos dias 4, 5 e 6,
+              a depender da demanda, a partir das 14h.
+            </p>
+          </div>
+        </article>
+
+        <article class="event-card scientific-session">
+          <div class="event-time">A definir</div>
+          <div class="event-info">
+            <p class="event-type">Sessão científica</p>
+            <h3 class="event-title">Sessão de Apresentações Criativas</h3>
+            <p class="event-note">
+              Horário a definir. Provavelmente após as 16h.
+            </p>
+          </div>
+        </article>
+
+        <article class="event-card scientific-session">
+          <div class="event-time">A definir</div>
+          <div class="event-info">
+            <p class="event-type">Sessão científica</p>
+            <h3 class="event-title">Apresentações de Pôsteres</h3>
+            <p class="event-note">
+              Horário a definir. Provavelmente após as 16h.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- DIA 5 -->
+    <section id="dia5" class="tab-panel dia5" aria-labelledby="heading-dia5">
+      <div class="day-heading dia5-bg">
+        <h2 id="heading-dia5">Dia 5 · Novembro 5</h2>
+        <p>Palestras gerais, mesas redondas e sessões científicas</p>
+      </div>
+
+      <div class="schedule-list">
+        <article class="event-card">
+          <div class="event-time">9h</div>
+          <div class="event-info">
+            <p class="event-type">Palestra geral</p>
+            <h3 class="event-title">
+              Como o registro fóssil pode nos ajudar na conservação da biodiversidade diante das emergências climáticas planetárias?
+            </h3>
+            <p class="event-speaker">
+              <strong>Dr. Pedro Lorena Godoy</strong> · USP São Paulo
+            </p>
+          </div>
+        </article>
+
+        <article class="event-card">
+          <div class="event-time">10h15</div>
+          <div class="event-info">
+            <p class="event-type">Mesa redonda</p>
+            <h3 class="event-title">Genomics and Conservation in the Neotropics</h3>
+            <p class="event-speaker">
+              <strong>Moderador: Dr. Marcos Siqueira</strong>
+            </p>
+          </div>
+        </article>
+
+        <article class="event-card">
+          <div class="event-time">10h15</div>
+          <div class="event-info">
+            <p class="event-type">Mesa redonda</p>
+            <h3 class="event-title">
+              Conservação da biodiversidade de água doce na América Latina
+            </h3>
+            <p class="event-speaker">
+              <strong>Moderador: Dr. Cristhian Clavijo</strong> · LACA/SCB
+            </p>
+          </div>
+        </article>
+
+        <article class="event-card">
+          <div class="event-time">13h30</div>
+          <div class="event-info">
+            <p class="event-type">Palestra geral</p>
+            <h3 class="event-title">
+              Genética da conservação de espécies arbóreas: o caso da Araucaria em Minas Gerais
+            </h3>
+            <p class="event-speaker">
+              <strong>Dra. Dulcinéia de Carvalho</strong> · UFLA - Lavras, MG
+            </p>
+          </div>
+        </article>
+
+        <article class="event-card">
+          <div class="event-time">14h15</div>
+          <div class="event-info">
+            <p class="event-type">Mesa redonda</p>
+            <h3 class="event-title">
+              Desafios e perspectivas da conservação dos butiazais
+            </h3>
+            <p class="event-speaker">
+              <strong>Moderadora: Dra. Rosa Lia Barbieri</strong> · EMBRAPA
+            </p>
+          </div>
+        </article>
+
+        <article class="event-card">
+          <div class="event-time">14h15</div>
+          <div class="event-info">
+            <p class="event-type">Mesa redonda</p>
+            <h3 class="event-title">
+              Silvicultura tropical, melhoramento e biotecnologia de espécies nativas
+            </h3>
+            <p class="event-speaker">
+              <strong>Moderador: Dr. Miklos Maximiliano Bajay</strong> · UDESC - Laguna, SC
+            </p>
+          </div>
+        </article>
+
+        <article class="event-card">
+          <div class="event-time">14h15</div>
+          <div class="event-info">
+            <p class="event-type">Mesa redonda</p>
+            <h3 class="event-title">Woman in science and conservation biology</h3>
+            <p class="event-speaker">
+              <strong>Moderadora: Dra. Rossana Colla Soletti</strong> · UFRGS
+            </p>
+          </div>
+        </article>
+
+        <article class="event-card scientific-session">
+          <div class="event-time">A definir</div>
+          <div class="event-info">
+            <p class="event-type">Sessão científica</p>
+            <h3 class="event-title">Sessão de Apresentações Orais</h3>
+            <p class="event-note">
+              Horário a definir. As apresentações orais devem acontecer nos dias 4, 5 e 6,
+              a depender da demanda, a partir das 14h.
+            </p>
+          </div>
+        </article>
+
+        <article class="event-card scientific-session">
+          <div class="event-time">A definir</div>
+          <div class="event-info">
+            <p class="event-type">Sessão científica</p>
+            <h3 class="event-title">Sessão de Apresentações Criativas</h3>
+            <p class="event-note">
+              Horário a definir. Provavelmente após as 16h.
+            </p>
+          </div>
+        </article>
+
+        <article class="event-card scientific-session">
+          <div class="event-time">A definir</div>
+          <div class="event-info">
+            <p class="event-type">Sessão científica</p>
+            <h3 class="event-title">Apresentações de Pôsteres</h3>
+            <p class="event-note">
+              Horário a definir. Provavelmente após as 16h.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- DIA 6 -->
+    <section id="dia6" class="tab-panel dia6" aria-labelledby="heading-dia6">
+      <div class="day-heading dia6-bg">
+        <h2 id="heading-dia6">Dia 6 · Novembro 6</h2>
+        <p>Palestras, mesa redonda, assembleia, premiações, encerramento e sessões científicas</p>
+      </div>
+
+      <div class="schedule-list">
+        <article class="event-card">
+          <div class="event-time">9h</div>
+          <div class="event-info">
+            <p class="event-type">Palestra geral</p>
+            <h3 class="event-title">
+              Além das ondas: o poder da ciência e da comunidade na conservação da baleia-franca-austral no Brasil
+            </h3>
+            <p class="event-speaker">
+              <strong>Dra. Karina Rejane Groch</strong> · Instituto Australis
+            </p>
+          </div>
+        </article>
+
+        <article class="event-card">
+          <div class="event-time">10h15</div>
+          <div class="event-info">
+            <p class="event-type">Mesa redonda</p>
+            <h3 class="event-title">
+              Mamíferos marinhos e costeiros e as diferentes interações com comunidades humanas
+            </h3>
+            <p class="event-speaker">
+              <strong>Moderador: Dr. Ignácio Moreno</strong> · UFRGS
+            </p>
+          </div>
+        </article>
+
+        <article class="event-card">
+          <div class="event-time">14h</div>
+          <div class="event-info">
+            <p class="event-type">Palestra geral</p>
+            <h3 class="event-title">
+              Bioindicadores e Ecotoxicidade: O papel das plantas aquáticas no diagnóstico de ambientes contaminados
+            </h3>
+            <p class="event-speaker">
+              <strong>Dr. Juraci Oliveira</strong> · UFV - Viçosa, MG
+            </p>
+          </div>
+        </article>
+
+        <article class="event-card">
+          <div class="event-time">15h</div>
+          <div class="event-info">
+            <p class="event-type">Mesa redonda</p>
+            <h3 class="event-title">
+              Perspectives of the Latin American and Caribbean section for uniting towards conservation
+            </h3>
+            <p class="event-speaker">
+              <strong>Moderador: Dr. Enéas Konzen</strong> · UFRGS
+            </p>
+          </div>
+        </article>
+
+        <article class="event-card">
+          <div class="event-time">16h</div>
+          <div class="event-info">
+            <p class="event-type">Assembleia</p>
+            <h3 class="event-title">Assembleia Geral LACA/SCB</h3>
+          </div>
+        </article>
+
+        <article class="event-card">
+          <div class="event-time">18h</div>
+          <div class="event-info">
+            <p class="event-type">Cerimônia</p>
+            <h3 class="event-title">Premiações</h3>
+          </div>
+        </article>
+
+        <article class="event-card">
+          <div class="event-time">19h</div>
+          <div class="event-info">
+            <p class="event-type">Encerramento</p>
+            <h3 class="event-title">Encerramento</h3>
+          </div>
+        </article>
+
+        <article class="event-card scientific-session">
+          <div class="event-time">A definir</div>
+          <div class="event-info">
+            <p class="event-type">Sessão científica</p>
+            <h3 class="event-title">Sessão de Apresentações Orais</h3>
+            <p class="event-note">
+              Horário a definir. As apresentações orais devem acontecer nos dias 4, 5 e 6,
+              a depender da demanda, a partir das 14h.
+            </p>
+          </div>
+        </article>
+
+        <article class="event-card scientific-session">
+          <div class="event-time">A definir</div>
+          <div class="event-info">
+            <p class="event-type">Sessão científica</p>
+            <h3 class="event-title">Sessão de Apresentações Criativas</h3>
+            <p class="event-note">
+              Horário a definir. Provavelmente após as 16h.
+            </p>
+          </div>
+        </article>
+
+        <article class="event-card scientific-session">
+          <div class="event-time">A definir</div>
+          <div class="event-info">
+            <p class="event-type">Sessão científica</p>
+            <h3 class="event-title">Apresentações de Pôsteres</h3>
+            <p class="event-note">
+              Horário a definir. Provavelmente após as 16h.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- DIA 7 -->
+    <section id="dia7" class="tab-panel dia7" aria-labelledby="heading-dia7">
+      <div class="day-heading dia7-bg">
+        <h2 id="heading-dia7">Dia 7 · Novembro 7</h2>
+        <p>Visitas técnicas</p>
+      </div>
+
+      <div class="schedule-list">
+        <article class="event-card">
+          <div class="event-time">A definir</div>
+          <div class="event-info">
+            <p class="event-type">Atividade externa</p>
+            <h3 class="event-title">Visitas Técnicas</h3>
+            <p class="event-note">Locais a definir.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <div class="note-box">
+      <p>
+        <strong>Observação:</strong> os horários de apresentações orais, apresentações criativas e pôsteres ainda serão definidos.
+        As apresentações orais estão previstas para ocorrer nos dias 4, 5 e 6, a depender da demanda, a partir das 14h.
+        As apresentações criativas e os pôsteres provavelmente ocorrerão após as 16h.
+      </p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>5º Congresso LACA/SCB 2026 · Programação organizada por dia do congresso</p>
+  </footer>
+
+  <script>
+    function openTab(event, tabId) {
+      const panels = document.querySelectorAll(".tab-panel");
+      const buttons = document.querySelectorAll(".tab-btn");
+
+      panels.forEach(function(panel) {
+        panel.classList.remove("active");
+      });
+
+      buttons.forEach(function(button) {
+        button.classList.remove("active");
+      });
+
+      document.getElementById(tabId).classList.add("active");
+      event.currentTarget.classList.add("active");
+
+      window.scrollTo({
+        top: document.querySelector(".tabs-wrap").offsetTop,
+        behavior: "smooth"
+      });
+    }
+
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: "pt",
+        includedLanguages: "es,en",
+        autoDisplay: false
+      }, "google_translate_element");
+    }
+
+    function translatePage(languageCode) {
+      const combo = document.querySelector(".goog-te-combo");
+
+      if (combo) {
+        combo.value = languageCode;
+        combo.dispatchEvent(new Event("change"));
+      } else {
+        alert("A tradução automática ainda está carregando. Aguarde alguns segundos e tente novamente.");
+      }
+    }
+  </script>
+
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>
