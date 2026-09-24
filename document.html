@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>5th LACA/SCB Congress 2026 - Porto Alegre - Programação</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#f4f6f9;color:#1a2b3c}
+header{background:#0f2a44;color:#fff;padding:32px 20px;text-align:center}
+header h1{margin:0;font-size:26px}header p.theme{color:#7dd3c8;font-size:18px;margin:8px 0}
+header p.meta{opacity:.9;margin:4px 0;font-size:14px}header a{color:#fff}
+nav.tabs{position:sticky;top:0;background:#fff;display:flex;gap:8px;overflow-x:auto;padding:12px;border-bottom:2px solid #e2e8f0;z-index:10}
+nav.tabs button{white-space:nowrap;border:1px solid #0f2a44;background:#fff;color:#0f2a44;border-radius:8px;padding:10px 16px;font-weight:700;cursor:pointer}
+nav.tabs button.active{background:#0f2a44;color:#fff}
+main{max-width:1000px;margin:0 auto;padding:20px}
+.day{display:none}.day.active{display:block}
+.card{background:#fff;border-radius:12px;padding:16px;margin:12px 0;display:flex;gap:14px;border-left:5px solid #00a99d;box-shadow:0 1px 4px rgba(0,0,0,.08)}
+.time{min-width:70px;font-weight:800;color:#0f2a44;font-size:14px}
+.badge{display:inline-block;font-size:11px;font-weight:700;text-transform:uppercase;background:#e6f4f2;color:#0b6b62;border-radius:20px;padding:3px 10px;margin-bottom:6px}
+.badge.palestra{background:#fff3d6;color:#8a6d00}.badge.mesa{background:#e3ecff;color:#1e40af}.badge.mini{background:#e9e7ff;color:#4c1d95}.badge.poster,.badge.oral{background:#e8f5e9;color:#1b5e20}.badge.cerimonia{background:#fce4ec;color:#880e4f}.badge.workshop{background:#f3e5f5;color:#6a1b9a}.badge.externa{background:#fff8e1;color:#e65100}
+.card h3{margin:4px 0 6px;font-size:16px}.card p{margin:2px 0;font-size:14px;color:#43586e}.card p strong{color:#1a2b3c}
+.local{font-size:13px;color:#64748b}
+.search{width:100%;padding:12px;border-radius:8px;border:1px solid #cbd5e1;margin:12px 0}
+footer{text-align:center;padding:24px;color:#64748b;font-size:13px}
+@media(max-width:600px){.card{flex-direction:column}.time{min-width:auto}}
+</style>
+</head>
+<body>
+<header>
+<h1>5th LACA/SCB CONGRESS - Porto Alegre, RS - Nov 3-7, 2026</h1>
+<p class="theme">From ocean to land: conservation as a whole</p>
+<p class="meta">Website: <a href="https://conbio.org/mini-sites/laca-2026">conbio.org/mini-sites/laca-2026</a> · Registration: <a href="https://conbio.org/mini-sites/laca-2026/registration/registration/">registration page</a></p>
+</header>
+<nav class="tabs">
+<button class="active" onclick="showDay('d3',this)">03/11 · Minicursos + Abertura</button>
+<button onclick="showDay('d4',this)">04/11 · Quarta</button>
+<button onclick="showDay('d5',this)">05/11 · Quinta</button>
+<button onclick="showDay('d6',this)">06/11 · Sexta</button>
+<button onclick="showDay('d7',this)">07/11 · Sábado</button>
+</nav>
+<main>
+<input class="search" id="q" placeholder="Buscar por título, palestrante, local..." oninput="filterCards()">
+<section id="d3" class="day active">
+<h2>3 de novembro — Minicursos + Abertura</h2>
+<div class="card"><div class="time">09:00</div><div><span class="badge mini">Minicurso 1</span><h3>Monitoramento da biodiversidade via DNA ambiental</h3><p><strong>Prof. Dr. Miklos Maximiliano Bajay</strong> · CERES/UDESC</p><p class="local">Auditório Araucária</p></div></div>
+<div class="card"><div class="time">09:00</div><div><span class="badge mini">Minicurso 2</span><h3>Identificação de plantas trepadeiras - Ricardo</h3><p><strong>Ricardo Arthur Tomé Lenz</strong> · UFRGS</p><p class="local">Auditório Coqueiro - dia todo</p></div></div>
+<div class="card"><div class="time">14:00</div><div><span class="badge mini">Minicurso 3</span><h3>Circular economy and conservation biology - Eric &amp; Carla</h3><p><strong>Profa. Dra. Karla Pelz Serrano</strong> · Metropolitan Autonomous University, Mexico<br><strong>Prof. Dr. Osvaldo Eric Ramírez-Bravo</strong> · Benemérita Universidad Autónoma de Puebla, Mexico</p><p class="local">Auditório Araucária</p></div></div>
+<div class="card"><div class="time">14:00</div><div><span class="badge mini">Minicurso 4</span><h3>R for data analyses in conservation biology - Wellington</h3><p><strong>Prof. Dr. Wellington Ferreira Campos, UFVJM</strong> · UFVJM, Campus Unaí</p><p class="local">A confirmar espaço físico</p></div></div>
+<div class="card"><div class="time">14:00</div><div><span class="badge mini">Minicurso 6</span><h3>Helmintofauna de animais silvestres: um componente negligenciado em programas de conservação</h3><p><strong>Profa. Claudia Calegaro Marques, UFRGS</strong> · UFRGS</p><p class="local">A confirmar espaço físico</p></div></div>
+<div class="card"><div class="time">16:00</div><div><span class="badge mini">Minicurso 5</span><h3>Condominização, especulação imobiliária e as relações de racismo ambiental no contexto do Litoral Norte do Rio Grande do Sul - Wesley Assis</h3><p><strong>Prof. Wesley Diogo de Assis e Vet. Tiago Dominguez</strong></p><p class="local">Araucária</p></div></div>
+<div class="card"><div class="time">18:00</div><div><span class="badge cerimonia">Abertura</span><h3>Abertura oficial - hinos - mesa e falas iniciais; recital</h3><p class="local">Salão Nobre - Direito</p></div></div>
+<div class="card"><div class="time">19:00</div><div><span class="badge palestra">Palestra magna</span><h3>Palestra magna: Maria Eugenia Farías - Da origem da vida às ameaças à sua conservação</h3><p><strong>Profa. Dra. Maria Eugenia Farias</strong> · PUNABIO, Argentina</p><p class="local">Salão Nobre - Direito</p></div></div>
+<div class="card"><div class="time">—</div><div><span class="badge cerimonia">Coquetel</span><h3>Coquetel de abertura</h3><p class="local">Salão Nobre - Direito</p></div></div>
+</section>
+<section id="d4" class="day">
+<h2>4 de novembro — Palestras, Mesas, Workshops</h2>
+<div class="card"><div class="time">09:00</div><div><span class="badge palestra">Palestra geral 1</span><h3>Climate change, agricultural expansion, and their influence on Amazonian microbial communities</h3><p><strong>Profa. Dra. Siu Mui Tsai</strong> · CENA/USP</p><p class="local">Salão Nobre - Direito</p></div></div>
+<div class="card"><div class="time">10:15</div><div><span class="badge mesa">Mesa 1a</span><h3>Microbes Matter: Conserving the Unseen Biodiversity in a Changing Climate</h3><p><strong>Moderador: Prof. Dr. Ng Haig They, UFRGS</strong><br>10:35 Debate entre os convidados — <strong>Profa. Dra. Maria Eugenia Farías, PUNABIO</strong><br>10:55 <strong>Profa. Dra. María Cecília Alonso Urquiola, PEDECIBA</strong> · UDELAR, Uruguai<br>11:15 <strong>Prof. Dr. Anders Lanzén, AZTI</strong> · AZTI, Spain</p><p class="local">Salão Nobre - Direito</p></div></div>
+<div class="card"><div class="time">10:15</div><div><span class="badge mesa">Mesa 1b</span><h3>Meliponicultura e conservação de abelhas nativas</h3><p><strong>Moderadora: Profa. Dra. Karen Luisa Haag, UFRGS</strong><br>10:35 Comunicação sexual e inteligência artificial como ferramentas para a conservação de abelhas em ambientes agrícolas — <strong>Prof. Dr. Samuel Boff, UFMS</strong> · UFMS<br>10:55 O paradoxo de conservar polinizadores que ignoram fronteiras espaciais — <strong>Prof. Dr. Charles Fernando dos Santos, UFRGS</strong> · UFRGS<br>11:15 O intercâmbio de microorganismos entre abelhas manejadas e os riscos associados</p><p class="local">Auditório Ipê - Centro Cultural</p></div></div>
+<div class="card"><div class="time">10:15</div><div><span class="badge oral">Orais</span><h3>Sessão de apresentações orais - Estudantes de graduação e pós-graduação</h3><p class="local">Auditório Jacarandá · 10:15 ao meio-dia</p></div></div>
+<div class="card"><div class="time">Manhã</div><div><span class="badge workshop">Congressinho</span><h3>Congressinho com oficinas</h3><p class="local">A confirmar espaço físico · Manhã inteira</p></div></div>
+<div class="card"><div class="time">13:15</div><div><span class="badge palestra">Palestra</span><h3>Integração de Dados de Ictioplâncton na Modelação e Gestão Sustentável de Pescarias</h3><p><strong>Prof. Régis Santos</strong> · Universidade dos Açores</p><p class="local">Salão Nobre - Direito</p></div></div>
+<div class="card"><div class="time">14:15</div><div><span class="badge mesa">Mesa 2a</span><h3>Pesca sustentável, monitoramento pesqueiro e suas relações com a conservação de peixes e ecossistemas costeiros e marinhos</h3><p><strong>Moderador: Prof. Dr. Fábio Lameiro Rodrigues</strong> · UFRGS<br>14:35 <strong>Prof. Dr. Manuel Mendoza Carranza</strong> · Universidad Juárez Autónoma de Tabasco<br>14:55 <strong>Profa. Dra. Valéria Marques Lemos</strong> · FURG<br>15:15 Discussão</p><p class="local">Salão Nobre - Direito</p></div></div>
+<div class="card"><div class="time">14:15</div><div><span class="badge mesa">Mesa 2b</span><h3>Zoonotic diseases and threat to conservation - a global concern</h3><p><strong>Dr. Derek Blaese de Amorim</strong> · UFRGS<br>14:35 Implications of the avian influenza virus for wildlife conservation, ecosystem services, and ecological processes — <strong>Prof. Dr. Sergio Lambertucci</strong> · Universidad Nacional del Comahue, Argentina - Patagonia<br>14:55 Impacts and lessons learned from the first HPAI (H5N1) outbreak in South American pinnipeds along the southern Brazilian coast</p><p class="local">Auditório Ipê</p></div></div>
+<div class="card"><div class="time">14:15</div><div><span class="badge oral">Orais</span><h3>Sessão de apresentações orais - Estudantes de graduação e pós-graduação</h3><p class="local">Auditório Jacarandá</p></div></div>
+<div class="card"><div class="time">16:00</div><div><span class="badge workshop">Workshop</span><h3>Workshop: Mônica Nazaré Rodrigues Furtado da Costa - A CONFIRMAR</h3><p class="local">Auditório Ipê</p></div></div>
+<div class="card"><div class="time">16:30</div><div><span class="badge mesa">Mesa 2c</span><h3>Genética forense para a conservação da biodiversidade (em definição) - Moderador: Pedro Galetti/UFSCAR</h3><p class="local">Jacarandá</p></div></div>
+<div class="card"><div class="time">17:00</div><div><span class="badge workshop">Workshop</span><h3>Julia Plazi - Ciência Aberta para a Conservação: Como Transformar Publicações em Dados Reutilizáveis</h3><p class="local">Salão Nobre - Direito</p></div></div>
+<div class="card"><div class="time">17:00</div><div><span class="badge poster">Pôsteres</span><h3>Sessão de pôsteres</h3><p class="local">Local a definir</p></div></div>
+</section>
+<section id="d5" class="day">
+<h2>5 de novembro — Palestras, Mesas, Pôsteres</h2>
+<div class="card"><div class="time">09:00</div><div><span class="badge palestra">Palestra geral 3</span><h3>Como o registro fóssil pode nos ajudar na conservação da biodiversidade diante das emergências climáticas planetárias?</h3><p><strong>Pedro Lorena Godoy</strong> · USP</p><p class="local">Salão Nobre - Direito</p></div></div>
+<div class="card"><div class="time">10:15</div><div><span class="badge mesa">Mesa 3a</span><h3>Genomics and Conservation in the Neotropics - Marcos Siqueira</h3><p>10:35 Maria Imaculada Zucchi - Genomics of tropical and subtropical palms — <strong>Maria Imaculada Zucchi</strong> · APTA/SP<br>10:55 Pedro Galetti - Genomics of Neotropical animal populations — <strong>Pedro Galetti</strong> · UFSCAR<br>11:15 Adelson Lemes da Silva Junior - Population genetics and native species silviculture — <strong>Adelson Lemes da Silva Junior</strong> · UFLA<br>11:30 Andreia Carina Turchetto-Zolet - Genomics, transcriptomics and phylogeography of Eugenia uniflora — <strong>Andreia Carina Turchetto-Zolet</strong> · UFRGS</p><p class="local">Salão Nobre - Direito</p></div></div>
+<div class="card"><div class="time">10:15</div><div><span class="badge mesa">Mesa 3b</span><h3>Conservação da biodiversidade de água doce na America Latina - Moderador Christian Clavijo</h3><p><strong>Cristhian Clavijo</strong> · LACA/SCB<br>10:35 <strong>Hector Vera Alcaraz</strong> · Museu Nacional de Historia Natural Paraguay<br>10:55 Não terá títulos, será um debate entre participantes — <strong>Claudia Callil</strong> · UFSC<br>11:15 <strong>Gabriel Laufer</strong> · Vida Silvestre Uruguay y Museo Nacional de Historia Natural Uruguay</p><p class="local">Auditório Ipê</p></div></div>
+<div class="card"><div class="time">10:15</div><div><span class="badge mesa">Mesa 3c</span><h3>Mesa redonda Fernando Mavungo - A CONFIRMAR</h3><p class="local">Sala 2 do Salão de Atos · 10:15 / 10:35 / 10:55 / 11:15</p></div></div>
+<div class="card"><div class="time">10:15</div><div><span class="badge oral">Orais</span><h3>Sessão de apresentações orais - Estudantes de graduação e pós-graduação</h3><p class="local">Auditório Jacarandá · 10:15 às 12:00</p></div></div>
+<div class="card"><div class="time">13:30</div><div><span class="badge palestra">Palestra geral 4</span><h3>Biogeography of biological invasions: using Hutchinson's duality to understand and manage the spread of invasive plants</h3><p><strong>Ramiro O. Bustamante</strong> · Universidad de Chile</p><p class="local">Salão Nobre - Direito</p></div></div>
+<div class="card"><div class="time">14:15</div><div><span class="badge mesa">Mesa 4a</span><h3>Desafios e perspectivas da conservação dos butiazais</h3><p><strong>Enéas Ricardo Konzen</strong> · UFRGS e LACA/SCB<br>14:20 Rosa Lía Barbieri — <strong>Rosa Lía Barbieri</strong> · EMBRAPA Clima Temperado, Pelotas<br>14:40 Mercedes Rivas — <strong>Mercedes Rivas</strong> · UDELAR - Rocha, Uruguay<br>Gilson Schlindwein - Rede Butiazeiros: cultivando conservação e diversidade — <strong>Ênio Sosinski</strong> · EMBRAPA Clima Temperado, Pelotas<br>15:00 Viviana Solis</p><p class="local">Salão Nobre - Direito</p></div></div>
+<div class="card"><div class="time">14:00</div><div><span class="badge mesa">Mesa 4b</span><h3>Silvicultura tropical e conservação de espécies nativas - Moderador Miklos Maximiliano Bajay</h3><p><strong>Miklos Maximiliano Bajay</strong> · CERES/UDESC<br>14:20 Silvicultura de espécies nativas em prol da sua conservação e melhoramento — <strong>Lucas Amaral de Melo</strong> · UFLA<br>14:40 Projeto Plantando Sorrisos — <strong>Marcos Siqueira</strong> · UFLA<br>15:00 Discussão · UEMG</p><p class="local">Auditório Ipê</p></div></div>
+<div class="card"><div class="time">14:00</div><div><span class="badge mesa">Mesa 4c</span><h3>Mulheres na Ciência - Moderadora: Rossana Colla Soletti</h3><p><strong>Rossana Colla Soletti</strong> · UFRGS<br>14:20 Parentalidade na academia — <strong>Fernanda Staniuaski</strong> · UFRGS<br>14:40 Mulheres na ecologia e na conservação: desafios, barreiras e caminhos para o futuro — <strong>Eugenia Zandoná</strong> · UERJ<br>15:00 Discussão</p><p class="local">Auditório Jacarandá</p></div></div>
+<div class="card"><div class="time">16:00</div><div><span class="badge poster">Pôsteres</span><h3>Apresentações de pôsteres (graduação e pós-graduação)</h3></div></div>
+</section>
+<section id="d6" class="day">
+<h2>6 de novembro — Encerramento</h2>
+<div class="card"><div class="time">09:00</div><div><span class="badge palestra">Palestra geral 5</span><h3>Além das ondas: o poder da ciência e da comunidade na conservação da baleia-franca-austral no Brasil</h3><p><strong>Dra. Karina Rejane Groch</strong> · Instituto Australis - Imbituba, SC</p><p class="local">Auditório Ipê</p></div></div>
+<div class="card"><div class="time">10:15</div><div><span class="badge mesa">Mesa 5a</span><h3>Mamíferos marinhos e costeiros e as diferentes interações com comunidades humanas</h3><p><strong>Moderador: Prof. Dr. Ignacio Benites Moreno</strong><br>10:35 <strong>Profa. Dra. Larissa Dalpaz de Azevedo</strong> · UFSC - Florianópolis<br>10:55 <strong>Dra. Elisa Berlitz Ilha</strong> · UFRGS - Imbé<br>11:15 <strong>Profa. Dra. María Paula Laporta Migues</strong> · Montevidéu - Uruguay</p><p class="local">Auditório Ipê</p></div></div>
+<div class="card"><div class="time">10:15</div><div><span class="badge mesa">Mesa 5b</span><h3>Desafios e avanços na conservação da biodiversidade em ecossistemas costeiros</h3><p><strong>Profa. Dra. Carla Menegola</strong> · UFRGS<br>10:35 <strong>Profa. Dra. Sílvia Renate Ziller</strong> · Instituto Hórus de Desenvolvimento e Educação Ambiental<br>10:55 <strong>Profa. Dra. Rosana Moreira da Rocha</strong> · UFPR</p><p class="local">Auditório Jacarandá</p></div></div>
+<div class="card"><div class="time">13:30</div><div><span class="badge palestra">Palestra geral 6</span><h3>Bioindicação e Ecotoxicologia: O Papel das Plantas Aquáticas no Diagnóstico de Ambientes Contaminados - Juraci Oliveira</h3><p><strong>Prof. Dr. Juraci Oliveira</strong> · UFV</p><p class="local">Auditório Ipê</p></div></div>
+<div class="card"><div class="time">14:15</div><div><span class="badge mesa">Painel</span><h3>Perspectives of the Latin American and Caribbean Section for uniting towards conservation (em definição)</h3><p><strong>Moderador: Prof. Dr. Luis Soares</strong> · WWF Equador · LACA/SCB</p><p class="local">Auditório Jacarandá</p></div></div>
+<div class="card"><div class="time">16:00</div><div><span class="badge cerimonia">Assembleia</span><h3>Assembleia geral da LACA/SCB</h3><p><strong>Profa. Dra. Karla Pelz Serrano, Presidente da LACA/SCB</strong></p><p class="local">Auditório Ipê</p></div></div>
+<div class="card"><div class="time">18:00</div><div><span class="badge cerimonia">Encerramento</span><h3>Awards and final remarks</h3><p class="local">Auditório Jacarandá (urgente - reservar)</p></div></div>
+<div class="card"><div class="time">19:30</div><div><span class="badge cerimonia">Cocktail</span><h3>Cocktail</h3><p class="local">Espaço Paineira (urgente - reservar)</p></div></div>
+</section>
+<section id="d7" class="day">
+<h2>7 de novembro — Visitas técnicas</h2>
+<div class="card"><div class="time">Sábado</div><div><span class="badge externa">Externa</span><h3>Visitas técnicas a serem confirmadas durante o sábado, dia 7 de novembro</h3><p>Locais a definir.</p></div></div>
+</section>
+</main>
+<footer>5th LACA/SCB 2026 · Porto Alegre · From ocean to land: conservation as a whole</footer>
+<script>
+function showDay(id,btn){document.querySelectorAll('.day').forEach(d=>d.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('nav.tabs button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');window.scrollTo({top:0,behavior:'smooth'})}
+function filterCards(){var q=document.getElementById('q').value.toLowerCase();document.querySelectorAll('.card').forEach(c=>{c.style.display=c.textContent.toLowerCase().includes(q)?'flex':'none'})}
+</script>
+</body>
+</html>
